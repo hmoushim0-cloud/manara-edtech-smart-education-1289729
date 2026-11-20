@@ -52,7 +52,8 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: 'Smart Stylus Digitizer 4096-Level + BLE Beacon'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    val peripheralName = state.telemetry?.peripheralName ?: "Smart Stylus Digitizer 4096-Level + BLE Beacon"
+                    Text("العتاد الحي: $peripheralName", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "BLE Beacon: Pen Pressure 2048/4096 | Proximity 1.2m", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {
